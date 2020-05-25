@@ -34,9 +34,12 @@ the output should be
 director
 Christopher Nolan
 [execution time limit] 10 seconds (mysql)
-*/
+
 
 /*Please add ; after each select statement*/
+Note: Actually the below mySQL code fails a few hidden test cases. This is because I need to consider the total number of oscars 
+i.e the sum of oscars instead, for that I would require to use HAVING instead of WHERE as WHERE clause does not support 
+aggregation functions.
 CREATE PROCEDURE movieDirectors()
 BEGIN
 SELECT director
@@ -46,3 +49,7 @@ GROUP BY director
 ORDER BY director;
 	
 END
+
+*/
+
+
