@@ -1,5 +1,5 @@
 /*
-You are developing an alarm clock app that works as follows: the user can set a date and a time, and the app will ring every week at the given time, starting at the given date until the end of the current year.
+You are developing an alarm  clock app that works as follows: the user can set a date and a time, and the app will ring every week at the given time, starting at the given date until the end of the current year.
 
 The starting date is the only record in the userInput table, which has the following structure:
 
