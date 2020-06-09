@@ -1,0 +1,27 @@
+/*
+In order to optimize your business, you've decided to merge a couple of your office branches and get rid of the outdated branch types.
+
+The existing office branches and branch types are stored in the tables branches and branch_types, respectively. The tables have the following structures:
+
+branches:
+branch_id: the branch ID;
+name: the name of the branch;
+branchtype_id: the branch type ID.
+branch_types
+id: the unique branch ID;
+name: the name of the branch type.
+You've decided to start small. As your first step, you want to delete the outdated branch types, all of which end with -outdated, from the branch_types table.
+
+For now, you want to keep all the branches with the deleted branch types in the branches table, but to differentiate them you will set their 
+*/
+
+CREATE PROCEDURE officeBranches()
+BEGIN
+    ALTER TABLE branches ADD FOREIGN KEY (branchtype_id)
+    REFERENCES branch_types(id) ON DELETE SET NULL;
+
+    DELETE FROM branch_types WHERE name LIKE '%-outdated';
+
+    SELECT * FROM branches
+    ORDER BY branch_id;
+END
